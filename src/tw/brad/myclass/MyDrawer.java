@@ -1,8 +1,8 @@
 package tw.brad.myclass;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*; // *字號代表awt底下的所有東西
 
+import javax.swing.DebugGraphics;
 import javax.swing.JPanel;
 
 public class MyDrawer extends JPanel{
@@ -14,11 +14,12 @@ public class MyDrawer extends JPanel{
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		if(g instanceof Graphics) {
-			System.out.println("OK");
-		}else {
-		System.out.println("XX");
-}
+		Graphics2D g2d = (Graphics2D)g;
+		
+		g2d.setColor(Color.DARK_GRAY);  //g2d = 小畫家的筆  
+		g2d.setStroke(new BasicStroke(3));
+		
+		g2d.drawLine(0, 0, 200, 100);
 	}
 }
 
