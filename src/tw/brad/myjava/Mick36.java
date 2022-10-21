@@ -20,7 +20,7 @@ public class Mick36 {
 	}
 
 }
-interface Brad361{ //介面可以多重實作,
+interface Brad361{ //介面可以多重實作,  //interface定義規格
 	void m1();
 	void m2();
 }
