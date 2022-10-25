@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class Mick52 {
-
 	public static void main(String[] args) {
 		String source = "dir1/file1.txt";
 		String target = "dir2/file3.txt";
@@ -14,7 +13,7 @@ public class Mick52 {
 			
 			FileInputStream fin = new FileInputStream(source);
 			int c;
-			while((c = fin.read()) != -1) {
+			while ( (c = fin.read()) != -1) {
 				fout.write(c);
 			}
 			fin.close();
@@ -22,10 +21,9 @@ public class Mick52 {
 			fout.flush();
 			fout.close();
 			
-			
-			System.out.println("Save as ...OK"+ (System.currentTimeMillis() - start));			
-	}catch(Exception e) {
-		System.out.println(e);
-	}
+			System.out.println("Save as ... OK:" + (System.currentTimeMillis()- start));
+		}catch(Exception e) {
+			System.out.println(e);
+		}
 	}
 }

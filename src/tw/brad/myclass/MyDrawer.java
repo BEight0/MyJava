@@ -3,6 +3,7 @@ package tw.brad.myclass;
 import java.awt.*; // *字號代表awt底下的所有東西
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -12,7 +13,7 @@ import javax.swing.JPanel;
 
 public class MyDrawer extends JPanel{
 	//private LinkedList <LinkedList<HashMap<String, Integer>>> lines; //一條線裡面有點 Line<Line<Point>>
-	//private LinkedList<Line> lines, recyler; //Line<Line<Point>>
+	//private <LinkedList<Point>> lines, recyler; //Line<Line<Point>>
 	private LinkedList<Line> lines, recyler; // Lines<Line<Point>>
 	
 	private Color nowColor;
@@ -129,10 +130,10 @@ public class MyDrawer extends JPanel{
 		}		
 	}
 }
-class Point {   //實務上常使用
+class Point implements Serializable {    //實務上常使用
 	public int x, y;
 }
-class Line {
+class Line implements Serializable {
 	private LinkedList<Point> points;
 	private Color color;
 	private int Width;
